@@ -1,0 +1,28 @@
+<h3>All Cocktails</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card-product  mb-4">
+
+      <img src="https://www.destinationcocktails.fr/wp-content/uploads/2019/11/le_secret_des_cocktails_a_etages-2.jpg" />
+      <div class="card-product-infos">
+        <h2><%= cocktail.name %></h2>
+        <ul>
+          <li>
+            <% cocktail.ingredients.each do |ingredient| %>
+              <%= ingredient.name %>
+            <% end %>
+          </li>
+        </ul>
+    </div>
+    <div>
+      <%= link_to "add a dose", new_cocktail_dose_path(cocktail) %>
+      <%= link_to "see the details", cocktail_path(cocktail) %>
+    </div>
+  </div>
+  <% end %>
+
+      </div>
+    </div>
+</div>

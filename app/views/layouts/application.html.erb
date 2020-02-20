@@ -11,9 +11,12 @@
 
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://www.gifi.fr/media/catalog/product/cache/1/image/1000x/9df78eab33525d08d6e5fb8d27136e95/3/7/377312.jpg" %>
-    <% end %>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Add Cocktails", new_cocktail_path(@cocktail), class: "nav-link" %>
+    </ul>
+  </div>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -27,8 +30,9 @@
     </ul>
   </div>
 </div>
-
-    <%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>

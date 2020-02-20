@@ -11,6 +11,7 @@
   </li>
 </ul>
 <div>
-<%= link_to "Cocktails", cocktails_path %>
-<%= link_to "add a dose", new_cocktail_dose_path(@cocktail) %>
+  <%= link_to new_cocktail_dose_path(@cocktail) do %>
+    <i class="fa fa-plus"></i> Dose
+  <% end %>
 </div>

@@ -1,19 +1,27 @@
 <h3>All Cocktails</h3>
-      <% @cocktails.each do |cocktail| %>
-        <h2><%= cocktail.name %></h2>
-        <ul>
-          <% cocktail.ingredients.each do |ingredient| %>
-            <li>
-              <%= ingredient.name %>
-          <% end %>
-            </li>
-        </ul>
-    <div>
-      <%= link_to new_cocktail_dose_path(cocktail) do %>
-        <i class="fa fa-plus"></i> Dose
-      <% end %>
-      <%= link_to cocktail_path(cocktail) do %>
-        <i class="fa fa-plus"></i> Details
-      <% end %>
-    </div>
-  <% end %>
+      <div class="cards">
+          <% @cocktails.each do |cocktail| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random)">
+          <div class="d-flex justify-content-around align-items-center h-75 d-inline-block">
+              <h2><%= cocktail.name %></h2>
+              <ul>
+                <% cocktail.ingredients.each do |ingredient| %>
+                  <li>
+                    <%= ingredient.name %>
+                    <% end %>
+                  </li>
+              </ul>
+
+          </div>
+      <div class="links d-flex justify-content-between">
+        <%= link_to new_cocktail_dose_path(cocktail) do %>
+          <i class="fa fa-plus"></i> Dose
+        <% end %>
+        <%= link_to cocktail_path(cocktail) do %>
+          <i class="fa fa-plus"></i> Details
+        <% end %>
+      </div>
+        </div>
+    <% end %>
+      </div>
+

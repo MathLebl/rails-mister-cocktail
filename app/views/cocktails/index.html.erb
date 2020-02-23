@@ -1,7 +1,8 @@
 <h3>All Cocktails</h3>
       <div class="cards">
           <% @cocktails.each do |cocktail| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dpldqcrud/image/upload/c_fit,w_269/v1582291007/lwoztkze7j9fctrx9gax.jpg)">
+          <% if cocktail.photo.attached? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 150, width: 200, crop: :fit %>')">
           <div class="d-flex justify-content-around align-items-center h-75 d-inline-block">
               <h2><%= cocktail.name %></h2>
               <ul>
@@ -11,9 +12,11 @@
                     <% end %>
                   </li>
               </ul>
-
+               <div class="del">
+                <%= link_to '+', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %>
+               </div>
           </div>
-      <div class="links d-flex justify-content-between">
+      <div class="links d-flex justify-content-between align-items-end">
         <%= link_to new_cocktail_dose_path(cocktail) do %>
           <i class="fa fa-plus"></i> Dose
         <% end %>
@@ -22,6 +25,12 @@
         <% end %>
       </div>
         </div>
+        <% else %>
+  <p>ca marche</p>
+<% end %>
+
     <% end %>
       </div>
+
+
 

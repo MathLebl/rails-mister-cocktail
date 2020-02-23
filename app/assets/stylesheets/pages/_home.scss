@@ -43,7 +43,7 @@
   background-size: cover;
   background-position: center;
   height: 180px;
-
+  position: relative;
   color: white;
   font-size: 20px;
   font-weight: bold;
@@ -60,4 +60,26 @@ padding: 0;
 
 .links {
   font-size: 12px;
+}
+
+.card-category .del {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid white;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: lighter;
+  color: white;
+  transform: rotate(45deg);
+  text-decoration: none;
+}
+
+
+.card-category .del:hover {
+
 }

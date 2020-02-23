@@ -12,9 +12,9 @@
                     <% end %>
                   </li>
               </ul>
-               <div class="del">
-                <%= link_to '+', cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure?' } %>
-               </div>
+
+                <%= link_to '+', cocktail_path(cocktail), :id => "del", method: :delete, data: { confirm: 'Are you sure?' } %>
+
           </div>
       <div class="links d-flex justify-content-between align-items-end">
         <%= link_to new_cocktail_dose_path(cocktail) do %>
@@ -26,7 +26,19 @@
       </div>
         </div>
         <% else %>
-  <p>ca marche</p>
+   <div class="d-flex justify-content-around align-items-center h-75 d-inline-block">
+              <h2><%= cocktail.name %></h2>
+              <ul>
+                <% cocktail.ingredients.each do |ingredient| %>
+                  <li>
+                    <%= ingredient.name %>
+                    <% end %>
+                  </li>
+              </ul>
+
+                <%= link_to '+', cocktail_path(cocktail), :id => "del", method: :delete, data: { confirm: 'Are you sure?' } %>
+
+          </div>
 <% end %>
 
     <% end %>

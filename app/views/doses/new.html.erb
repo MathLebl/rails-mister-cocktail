@@ -2,7 +2,7 @@
 
   <div class="form-inputs">
     <%= f.input :description %>
-    <%= f.association :ingredient, collection: Ingredient.order('name') %>
+    <%= f.association :ingredient, collection: Ingredient.order('name'), prompt: "Choose an Ingredient" %>
   </div>
 
   <div class="form-actions">
